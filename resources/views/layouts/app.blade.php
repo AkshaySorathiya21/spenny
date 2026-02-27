@@ -127,6 +127,7 @@
         .nav-item.active {
             background-color: rgba(255, 255, 255, 0.1);
             border-left: 4px solid #61b20b;
+            background-color: #61b20b;
         }
 
         /* Responsive Sidebar and Main Content */

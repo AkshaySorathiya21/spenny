@@ -45,10 +45,13 @@
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                     <div class="flex flex-col md:flex-row gap-8 md:gap-12">
                         <div class="flex-shrink-0 flex flex-col items-center gap-4">
-                            <div class="relative group cursor-pointer">
+                            <input type="file" id="profile-image-input" class="hidden"
+                                accept="image/jpeg, image/png, image/gif" />
+                            <div class="relative group cursor-pointer"
+                                onclick="document.getElementById('profile-image-input').click()">
                                 <div
                                     class="size-28 sm:size-32 rounded-full border-4 border-white shadow-lg overflow-hidden relative bg-slate-100">
-                                    <img alt="Profile"
+                                    <img id="profile-image-preview" alt="Profile"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         src="https://ui-avatars.com/api/?name=Alex+Rivera&background=013b8f&color=fff&size=256" />
                                 </div>
@@ -524,6 +527,22 @@
                     });
                 });
             });
+            // Profile Image Preview Logic
+            const profileImageInput = document.getElementById('profile-image-input');
+            const profileImagePreview = document.getElementById('profile-image-preview');
+
+            if (profileImageInput && profileImagePreview) {
+                profileImageInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            profileImagePreview.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
         });
     </script>
 

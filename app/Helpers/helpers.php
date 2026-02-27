@@ -44,3 +44,24 @@ if (!function_exists('sendErrorResponse')) {
         ], $code);
     }
 }
+
+if (!function_exists('isActiveRoute')) {
+    /**
+     * Set the active class if the current route matches the given route names pattern.
+     *
+     * @param array|string $routes
+     * @param string $activeClass
+     * @param string $inactiveClass
+     * @return string
+     */
+    function isActiveRoute($routes, $activeClass = 'active', $inactiveClass = '')
+    {
+        foreach ((array) $routes as $route) {
+            if (request()->routeIs($route)) {
+                return $activeClass;
+            }
+        }
+
+        return $inactiveClass;
+    }
+}

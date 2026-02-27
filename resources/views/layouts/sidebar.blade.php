@@ -1,40 +1,40 @@
 <aside class="sidebar bg-primary flex flex-col z-50">
     <div class="py-4 flex justify-center items-center h-20">
         <!-- Logo for expanded state -->
-        <img class="sidebar-logo-full max-h-10 transition-opacity" src="{{ asset('assets/images/logo.png') }}"
-            alt="Spenny Logo">
+        <img class="sidebar-logo-full w-20 rounded-full max-h-20 transition-opacity"
+            src="{{ asset('assets/images/Spenny-Logo.png') }}" alt="Spenny Logo">
         <!-- Minimal initial logo for collapsed state -->
         <div
             class="sidebar-logo-min hidden size-10 rounded-xl bg-white/10 items-center justify-center text-white font-bold text-2xl shadow-inner">
             S</div>
     </div>
     <nav class="mt-6 flex-1 px-4 space-y-1 overflow-x-hidden">
-        <a class="nav-item active flex items-center gap-4 px-4 py-3.5 text-white rounded-lg transition-colors"
+        <a class="nav-item {{ isActiveRoute(['admin.dashboard.index', 'admin.dashboard.*'], 'active text-white', 'text-white/70 hover:text-white hover:bg-white/5') }} flex items-center gap-4 px-4 py-3.5 rounded-lg transition-colors"
             href="{{ route('admin.dashboard.index') }}">
             <span class="material-symbols-outlined shrink-0 text-xl">dashboard</span>
             <span class="font-semibold text-sm sidebar-text whitespace-nowrap">Dashboard</span>
         </a>
-        <a class="nav-item flex items-center gap-4 px-4 py-3.5 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+        <a class="nav-item {{ isActiveRoute('admin.categories.*', 'active text-white', 'text-white/70 hover:text-white hover:bg-white/5') }} flex items-center gap-4 px-4 py-3.5 rounded-lg transition-colors"
             href="{{ route('admin.categories.index') }}">
             <span class="material-symbols-outlined shrink-0 text-xl">category</span>
             <span class="font-medium text-sm sidebar-text whitespace-nowrap">Categories</span>
         </a>
-        <a class="nav-item flex items-center gap-4 px-4 py-3.5 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+        <a class="nav-item {{ isActiveRoute('admin.users.*', 'active text-white', 'text-white/70 hover:text-white hover:bg-white/5') }} flex items-center gap-4 px-4 py-3.5 rounded-lg transition-colors"
             href="{{ route('admin.users.index') }}">
             <span class="material-symbols-outlined shrink-0 text-xl">group</span>
             <span class="font-medium text-sm sidebar-text whitespace-nowrap">Users</span>
         </a>
-        <a class="nav-item flex items-center gap-4 px-4 py-3.5 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+        <a class="nav-item {{ isActiveRoute('admin.subscriptions.*', 'active text-white', 'text-white/70 hover:text-white hover:bg-white/5') }} flex items-center gap-4 px-4 py-3.5 rounded-lg transition-colors"
             href="{{ route('admin.subscriptions.index') }}">
             <span class="material-symbols-outlined shrink-0 text-xl">card_membership</span>
             <span class="font-medium text-sm sidebar-text whitespace-nowrap">Subscriptions</span>
         </a>
-        <a class="nav-item flex items-center gap-4 px-4 py-3.5 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+        <a class="nav-item {{ isActiveRoute('admin.transactions.*', 'active text-white', 'text-white/70 hover:text-white hover:bg-white/5') }} flex items-center gap-4 px-4 py-3.5 rounded-lg transition-colors"
             href="{{ route('admin.transactions.index') }}">
             <span class="material-symbols-outlined shrink-0 text-xl">receipt_long</span>
             <span class="font-medium text-sm sidebar-text whitespace-nowrap">Transactions</span>
         </a>
-        <a class="nav-item flex items-center gap-4 px-4 py-3.5 text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+        <a class="nav-item {{ isActiveRoute('admin.settings.*', 'active text-white', 'text-white/70 hover:text-white hover:bg-white/5') }} flex items-center gap-4 px-4 py-3.5 rounded-lg transition-colors"
             href="{{ route('admin.settings.index') }}">
             <span class="material-symbols-outlined shrink-0 text-xl">settings</span>
             <span class="font-medium text-sm sidebar-text whitespace-nowrap">Settings</span>
